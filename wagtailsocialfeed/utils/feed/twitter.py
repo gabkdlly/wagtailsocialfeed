@@ -64,8 +64,13 @@ class TwitterFeedQuery(AbstractFeedQuery):
 
         self.twitter = Twython(settings['CONSUMER_KEY'],
                                settings['CONSUMER_SECRET'],
-                               settings['ACCESS_TOKEN_KEY'],
-                               settings['ACCESS_TOKEN_SECRET'])
+                               #settings['ACCESS_TOKEN_KEY'],
+                               #settings['ACCESS_TOKEN_SECRET'],
+                               oauth_version=2)
+        access_token = self.twitter.obtain_access_token()
+        self.twitter = Twython(settings['CONSUMER_KEY'],
+                               access_token=access_token,
+                               api_version=2)
 
     def _get_load_kwargs(self, oldest_post):
         # Trick from twitter API doc to exclude the oldest post from

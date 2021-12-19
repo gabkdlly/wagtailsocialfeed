@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from wagtail.wagtailcore import blocks
+from wagtail.core import blocks
 
 from .models import SocialFeedConfiguration
 from .utils import get_feed_items, get_feed_items_mix

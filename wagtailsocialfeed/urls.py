@@ -4,6 +4,8 @@ from django.conf.urls import url
 
 from . import views
 
+app_name='wagtailsocialfeed'
+
 urlpatterns = [
     url(r'^moderate/(?P<pk>\d+)/$',
         views.ModerateView.as_view(),

@@ -6,7 +6,7 @@ import datetime
 from dateutil.tz import tzutc
 
 from django.core.cache import cache
-from django.utils import six
+import six
 
 from wagtailsocialfeed.utils.conf import get_socialfeed_setting
 
